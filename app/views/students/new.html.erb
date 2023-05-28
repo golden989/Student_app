@@ -1,0 +1,60 @@
+<style>
+  h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  form {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
+
+<h3>Create a student</h3>
+
+<%= form_with model: @student, url: students_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Enter your name" %><br>
+
+  <%= f.label :age %>
+  <%= f.text_field :age, placeholder: "Enter your age" %> <br>
+
+  <div class="form-actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
